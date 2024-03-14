@@ -1,9 +1,12 @@
 use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
+use clearscreen::clear;
 
 fn main() {
-    println!("Game: Guess the number.\n");
+    clear().expect("Failed to clear screen");
+
+    println!("Game: Guess the number between 1 and 100.\n");
     let mut guesses: u32 = 0;
     let secret_number: u32 = rand::thread_rng().gen_range(1..=100);
 
